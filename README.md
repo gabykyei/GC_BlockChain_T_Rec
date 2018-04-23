@@ -1,3 +1,27 @@
+CHAINUP TReck
+
+developer instructions
+======================
+1. Open up a terminal and run the following:
+
+ % cd $HOME
+ % mkdir project
+ % cd project
+ % git clone https://github.com/IntelLedger/sawtooth-core.git
+ % cd sawtooth-core
+
+2. In order to start the vagrant VM, change the current working directory to sawtooth-core/tools on the host and run:
+ % cd sawtooth-core/tools
+ % vagrant up
+3. Once the ‘vagrant up’ command has finished executing, run:
+ % vagrant ssh
+ NB: If the VM needs to be reset for any reason, it can be returned to the default state by running the following commands from the sawtooth-core/tools directory on the host:
+  % vagrant destroy
+  % vagrant up
+4. The vagrant environment is setup in such a way that installation of the software is not required. However, the C++/swig code must be built. To build, run the following inside vagrant:
+
+	$ /project/sawtooth-core/bin/build_all
+
 Sawtooth Lake
 =============
 

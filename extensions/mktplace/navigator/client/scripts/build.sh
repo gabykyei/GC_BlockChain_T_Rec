@@ -20,7 +20,7 @@ SCRIPT_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd "$SCRIPT_HOME/.."
 
-lein -o clean && lein -o with-profile +prod build:prod
+./lein -o clean && ./lein -o with-profile +prod build:prod
 
 ERR=$?
 

@@ -550,9 +550,9 @@
         (html
           [:form.form.transfer-form
            {:ref "transfer-form" :on-submit submit-handler}
-           [:h3 "Transfer Assets"]
+           [:h3 "Confirm Skill Set"]
            (form-row "Source"
-             (dropdown owner :initial-liability "Select a Holding"
+             (dropdown owner :initial-liability "Select a Record for this Skill set"
                        (holdings-to-dropdown-items source-holdings)))
 
            (when initial-liability
@@ -577,7 +577,7 @@
                        {:type "number"
                         :min 1
                         :parse-fn ->int
-                        :help-text "The amount to transfer." })
+                        :help-text "The Skill level to confirm." })
 
            (when (and initial-holding final-holding)
              [:div.row
@@ -589,7 +589,7 @@
                            :quantity quantity }))])
 
            (form-buttons owner initial-state
-                         {:submit {:label "Transfer"
+                         {:submit {:label "Confirm"
                                    :disabled (not (is-valid-transfer? data state))}
                           :reset {:label "Cancel"
                                   :on-click cancel-handler}})]))))))

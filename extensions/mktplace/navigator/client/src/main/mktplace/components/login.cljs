@@ -78,9 +78,9 @@
       (html
         [:div.container
          [:div.text-center
-          [:h1 "Welcome to Marketplace Navigator"]
-          [:p "Marketplace Navigator is a simple proof-of-concept asset
-              exchange built on top of the Sawtooth Lake distrubted ledger,
+          [:h1 "Welcome to the T_Rec Navigator"]
+          [:p "T_Rec Navigator is a simple proof-of-concept talent and skill
+              record keeping  built on top of the Sawtooth Lake distrubted ledger,
               and is "
               [:a {:href "http://intelledger.github.io/mktnav_users_guide.html"
                    :target "_blank"}

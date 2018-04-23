@@ -1,0 +1,91 @@
+2018-04-22T18:00:03.205234578 0.233557s notice: Recursively removing directory /home/gaby/Documents/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/tmp
+2018-04-22T18:00:03.238137727 0.266458s notice: Initializing directory /home/gaby/Documents/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data
+2018-04-22T18:00:03.238326473 0.266646s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/home/gaby/Documents/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data' did not already exist or is empty.)
+2018-04-22T18:00:03.238378837 0.266698s notice: Running rethinkdb 2.3.6~0zesty (GCC 5.4.1)...
+2018-04-22T18:00:03.254175363 0.282500s notice: Running on Linux 4.10.0-42-generic x86_64
+2018-04-22T18:00:03.254329370 0.282649s notice: Loading data from directory /home/gaby/Documents/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data
+2018-04-22T18:00:03.672935899 0.701256s info: Automatically using cache size of 572 MB
+2018-04-22T18:00:03.687137213 0.715457s notice: Listening for intracluster connections on port 29015
+2018-04-22T18:00:03.710226603 0.738547s notice: Listening for client driver connections on port 28015
+2018-04-22T18:00:03.710597930 0.738917s notice: Listening for administrative HTTP connections on port 8080
+2018-04-22T18:00:03.710611908 0.738931s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2018-04-22T18:00:03.710619313 0.738939s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2018-04-22T18:00:03.710631901 0.738951s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2018-04-22T18:00:03.710638561 0.738958s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-04-22T18:00:03.710649344 0.738969s notice: Server ready, "gaby_HP_Notebook_kgt" 514e9616-7980-4730-b176-c685c5ec5b7a
+2018-04-22T18:28:23.247547597 1700.275868s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-04-22T18:28:23.247712296 1700.276032s notice: Shutting down client connections...
+2018-04-22T18:28:23.247891194 1700.276211s notice: All client connections closed.
+2018-04-22T18:28:23.247896965 1700.276216s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-04-22T18:28:23.263082518 1700.291403s notice: Storage engine shut down.
+2018-04-22T20:15:58.519364482 0.484748s notice: Running rethinkdb 2.3.6~0zesty (GCC 5.4.1)...
+2018-04-22T20:15:58.560907029 0.526297s notice: Running on Linux 4.10.0-42-generic x86_64
+2018-04-22T20:15:58.561086130 0.526470s notice: Loading data from directory /home/gaby/Documents/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data
+2018-04-22T20:15:58.874142489 0.839526s info: Automatically using cache size of 100 MB
+2018-04-22T20:15:58.874553365 0.839937s warn: Cache size does not leave much memory for server and query overhead (available memory: 334 MB).
+2018-04-22T20:15:58.874563953 0.839947s warn: Cache size is very low and may impact performance.
+2018-04-22T20:15:58.883144881 0.848529s notice: Listening for intracluster connections on port 29015
+2018-04-22T20:15:58.927989166 0.893373s notice: Listening for client driver connections on port 28015
+2018-04-22T20:15:58.928267396 0.893651s notice: Listening for administrative HTTP connections on port 8080
+2018-04-22T20:15:58.928284232 0.893667s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2018-04-22T20:15:58.928294063 0.893677s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2018-04-22T20:15:58.928305735 0.893689s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2018-04-22T20:15:58.928312160 0.893695s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-04-22T20:15:58.928323714 0.893707s notice: Server ready, "gaby_HP_Notebook_kgt" 514e9616-7980-4730-b176-c685c5ec5b7a
+2018-04-22T20:19:58.739767241 240.705151s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-04-22T20:19:58.739917019 240.705300s notice: Shutting down client connections...
+2018-04-22T20:19:58.740846972 240.706231s notice: All client connections closed.
+2018-04-22T20:19:58.740852638 240.706236s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-04-22T20:19:58.776660480 240.742044s notice: Storage engine shut down.
+2018-04-22T19:35:44.576275993 40.091992s warn: Parent directory of log file (/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/log_file) could not be synced. (Invalid argument)
+2018-04-22T19:35:44.592272743 40.107987s notice: Running rethinkdb 2.3.6~0xenial (GCC 5.3.1)...
+2018-04-22T19:35:44.602893976 40.118615s notice: Running on Linux 4.4.0-119-generic x86_64
+2018-04-22T19:35:44.603250631 40.118965s notice: Loading data from directory /project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data
+2018-04-22T19:35:44.614358424 40.130075s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/metadata" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:35:44.661549418 40.177264s info: Automatically using cache size of 343 MB
+2018-04-22T19:35:44.664193696 40.179908s notice: Listening for intracluster connections on port 29015
+2018-04-22T19:35:44.670563174 40.186277s notice: Listening for client driver connections on port 28015
+2018-04-22T19:35:44.671565577 40.187280s notice: Listening for administrative HTTP connections on port 8080
+2018-04-22T19:35:44.671590036 40.187304s notice: Listening on cluster addresses: 127.0.0.1, 127.0.1.1, ::1
+2018-04-22T19:35:44.671596202 40.187310s notice: Listening on driver addresses: 127.0.0.1, 127.0.1.1, ::1
+2018-04-22T19:35:44.671608084 40.187322s notice: Listening on http addresses: 127.0.0.1, 127.0.1.1, ::1
+2018-04-22T19:35:44.671613158 40.187327s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-04-22T19:35:44.671623274 40.187337s notice: Server ready, "gaby_HP_Notebook_kgt" 514e9616-7980-4730-b176-c685c5ec5b7a
+2018-04-22T19:36:39.280673663 94.796388s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/tmp/1df6b18e-fe43-47df-94c7-f0a4c959e314.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:39.300521011 94.816237s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/tmp/1df6b18e-fe43-47df-94c7-f0a4c959e314.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:39.339747365 94.855462s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/1df6b18e-fe43-47df-94c7-f0a4c959e314" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:39.341181566 94.856896s info: Table 1df6b18e-fe43-47df-94c7-f0a4c959e314: Added replica on this server.
+2018-04-22T19:36:39.341277955 94.856992s info: Table 1df6b18e-fe43-47df-94c7-f0a4c959e314: Starting a new Raft election for term 1.
+2018-04-22T19:36:39.343543615 94.859258s info: Table 1df6b18e-fe43-47df-94c7-f0a4c959e314: This server is Raft leader for term 1. Latest log index is 0.
+2018-04-22T19:36:39.609944535 95.125659s info: Table 1df6b18e-fe43-47df-94c7-f0a4c959e314: Configuration is changing.
+2018-04-22T19:36:39.620746951 95.136461s info: Table 1df6b18e-fe43-47df-94c7-f0a4c959e314: Configuration is changing.
+2018-04-22T19:36:39.643138147 95.158853s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/tmp/e61c6ff9-9f2a-43e2-9e1d-e8b07146e4c8.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:39.655799830 95.171514s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/tmp/e61c6ff9-9f2a-43e2-9e1d-e8b07146e4c8.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:39.694455083 95.210169s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/e61c6ff9-9f2a-43e2-9e1d-e8b07146e4c8" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:39.695702279 95.211416s info: Table e61c6ff9-9f2a-43e2-9e1d-e8b07146e4c8: Starting a new Raft election for term 1.
+2018-04-22T19:36:39.697637068 95.213351s info: Table e61c6ff9-9f2a-43e2-9e1d-e8b07146e4c8: Added replica on this server.
+2018-04-22T19:36:39.699507505 95.215221s info: Table e61c6ff9-9f2a-43e2-9e1d-e8b07146e4c8: This server is Raft leader for term 1. Latest log index is 0.
+2018-04-22T19:36:39.969430742 95.485145s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/tmp/a290b9a9-2887-47dd-8771-cbbbe2f2bc94.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:39.979509855 95.495224s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/tmp/a290b9a9-2887-47dd-8771-cbbbe2f2bc94.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:40.013545301 95.529260s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/a290b9a9-2887-47dd-8771-cbbbe2f2bc94" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:40.015046031 95.530760s info: Table a290b9a9-2887-47dd-8771-cbbbe2f2bc94: Added replica on this server.
+2018-04-22T19:36:40.015147575 95.530862s info: Table a290b9a9-2887-47dd-8771-cbbbe2f2bc94: Starting a new Raft election for term 1.
+2018-04-22T19:36:40.018432171 95.534146s info: Table a290b9a9-2887-47dd-8771-cbbbe2f2bc94: This server is Raft leader for term 1. Latest log index is 0.
+2018-04-22T19:36:40.282315956 95.798030s info: Table a290b9a9-2887-47dd-8771-cbbbe2f2bc94: Configuration is changing.
+2018-04-22T19:36:40.305634202 95.821348s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/tmp/4aaf824f-d749-4739-b692-34d322df0bf4.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:40.324039624 95.839754s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/tmp/4aaf824f-d749-4739-b692-34d322df0bf4.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:40.362422952 95.878137s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/4aaf824f-d749-4739-b692-34d322df0bf4" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:40.362620907 95.878335s info: Table 4aaf824f-d749-4739-b692-34d322df0bf4: Starting a new Raft election for term 1.
+2018-04-22T19:36:40.364862433 95.880576s info: Table 4aaf824f-d749-4739-b692-34d322df0bf4: Added replica on this server.
+2018-04-22T19:36:40.365496644 95.881211s info: Table 4aaf824f-d749-4739-b692-34d322df0bf4: This server is Raft leader for term 1. Latest log index is 0.
+2018-04-22T19:36:40.659032529 96.174747s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/tmp/ac766857-db61-4c5f-a3e3-8173ce293903.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:40.672205013 96.187919s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/tmp/ac766857-db61-4c5f-a3e3-8173ce293903.create" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:40.701284334 96.216999s warn: Failed to sync parent directory of "/project/sawtooth-core/extensions/mktplace/navigator/server/rethinkdb_data/ac766857-db61-4c5f-a3e3-8173ce293903" (errno: 22 - Invalid argument). You may encounter data loss in case of a system failure. (Is the file located on a filesystem that doesn't support directory sync? e.g. VirtualBox shared folders)
+2018-04-22T19:36:40.701957537 96.217673s info: Table ac766857-db61-4c5f-a3e3-8173ce293903: Starting a new Raft election for term 1.
+2018-04-22T19:36:40.703064854 96.218779s info: Table ac766857-db61-4c5f-a3e3-8173ce293903: Added replica on this server.
+2018-04-22T19:36:40.706039253 96.221754s info: Table ac766857-db61-4c5f-a3e3-8173ce293903: This server is Raft leader for term 1. Latest log index is 0.
+2018-04-22T19:52:35.017827559 1050.533542s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-04-22T19:52:35.018608295 1050.534323s notice: Shutting down client connections...
+2018-04-22T19:52:35.018865898 1050.534580s notice: All client connections closed.
+2018-04-22T19:52:35.018875086 1050.534589s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-04-22T19:52:35.083842243 1050.599557s notice: Storage engine shut down.

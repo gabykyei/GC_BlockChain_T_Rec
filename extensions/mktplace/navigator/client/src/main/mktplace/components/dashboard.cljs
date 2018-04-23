@@ -77,11 +77,11 @@
                            :participants participants
                            :assets assets
                            :title [:a {:href (routes/offers-path link-args)}
-                                   "Latest Open Offers"]})]
+                                   "Latest Requests"]})]
                [:div.row
                 (om/build exchange-table
                           {:exchanges exchanges
                            :participants participants
                            :assets assets
                            :title [:a {:href (routes/exchanges-path link-args)}
-                                   "Latest Exchanges"]})]])))))
+                                   "Latest Confirmations"]})]])))))

@@ -46,12 +46,12 @@
         obj-name)))
 
 (defn asset-name-by-holding
-  "Finds the asset name for the given holding"
+  "Finds the skill name for the given Record"
   [assets {asset-id :asset}]
   (first-name assets asset-id "unknown"))
 
 (defn asset-type-name-by-asset
-  "Finds the asset-type name for a given asset"
+  "Finds the Skill-type name for a given Record"
   [asset-types {asset-type-id :asset-type}]
   (first-name asset-types asset-type-id "unknown"))
 

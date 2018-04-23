@@ -57,8 +57,8 @@
              (map (partial holding-row assets selections selectable?)))
         [:div.empty-holdings
          (if (and selectable? (not (empty? assets)))
-           "Select an Asset to see Holdings"
-           "No Holdings")])])))
+           "Select a Talent to see Records"
+           "No Records")])])))
 
 (defn asset-row [asset-types selections asset]
   (let [selected? (= asset (get selections :asset))]
@@ -76,7 +76,7 @@
   (html
     [:div#assets.list-group
      (if (empty? assets)
-       [:li.empty-assets "No Assets"]
+       [:li.empty-assets "No Skills"]
        (->> assets
             (sort-by :name)
             (map (partial asset-row asset-types selections))))]))
@@ -101,11 +101,11 @@
         [:div.row
 
          [:div.col-xs-6
-          (column-header "Assets" (routes/asset-create-path))
+          (column-header "Skills" (routes/asset-create-path))
           (asset-list asset-types assets selections)]
 
          [:div.col-xs-6
-          (column-header "Holdings" (routes/holding-create-path))
+          (column-header "Records" (routes/holding-create-path))
           (holding-list assets holdings selections)]]))))
 
 (defn- make-revoke-control-fn [participant]
@@ -160,10 +160,10 @@
               (om/build offer-table {:offers offers
                                      :participants participants
                                      :assets assets
-                                     :title "My Latest Offers"
+                                     :title "My Latest Skill Record Requests"
                                      :control-fn (make-revoke-control-fn participant)})]
              [:div.exchange-area
               (om/build exchange-table {:exchanges exchanges
                                         :participants participants
                                         :assets assets
-                                        :title "My Recent Exchanges"})]]]])))))
+                                        :title "My Recent Skills Acquired"})]]]])))))

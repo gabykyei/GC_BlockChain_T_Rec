@@ -10,6 +10,7 @@ PYTHONPATH=$PYTHONPATH:/project/sawtooth-core/validator/build/lib.linux-x86_64-2
 PYTHONPATH=$PYTHONPATH:/project/sawtooth-core/extensions/mktplace
 PYTHONPATH=$PYTHONPATH:/project/sawtooth-core/extensions/bond
 PYTHONPATH=$PYTHONPATH:/project/sawtooth-core/extensions/arcade
+PYTHONPATH=$PYTHONPATH:/project/sawtooth-core/extensions/mktplace/navigator/ledger_sync
 export PYTHONPATH
 
 PATH=$PATH:/project/sawtooth-core/bin

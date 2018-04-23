@@ -67,16 +67,16 @@
                                  (om/set-state! owner initial-state)))]
           (html
             [:div
-             [:h3 "Create Holding"]
+             [:h3 "Create Record"]
 
              [:form.form.holding-form {:on-submit submit-handler}
               (text-field owner :name "Name"
                           {:help-text "An optional, human-readable name for
-                                      the holding. Must begin with '/'."
+                                      the Record. Must begin with '/'."
                            :pattern fmt/object-name-pattern})
 
               (text-field owner :description "Description"
-                          {:help-text "Optional information about the holding."})
+                          {:help-text "Optional information about the Record."})
 
               (select-field owner :asset "Asset" asset-options
                             {:parse-fn (fn [id] (->> assets (filter #(= id (:id %))) first))
@@ -92,7 +92,7 @@
                             {:submit {:disabled (not (is-valid? state))}})]]))))))
 
 (defn holding-detail
-  "Component for dispaying the holding details"
+  "Component for dispaying the Record details"
   [{:keys [assets holding participant-name]} owner]
   (om/component
     (let [holding-name (fmt/object-name holding)

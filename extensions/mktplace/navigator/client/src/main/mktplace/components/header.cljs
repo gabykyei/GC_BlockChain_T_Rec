@@ -49,7 +49,7 @@
       (html [:nav.navbar.navbar-inverse.navbar-fixed-top
              [:div.navbar-header
               [:a.navbar-brand {:href (routes/dashboard-path link-args)}
-               "Marketplace Navigator"]]
+               "T_Rec Navigator"]]
              [:div#navbar
               [:ul.nav.navbar-nav.navbar-right
                (when block
@@ -58,7 +58,7 @@
 
                (when (participant-service/is-fully-provisioned? participant)
                  [:li [:a {:href (routes/sell-offer-path)}
-                       [:span (glyph :plus) " Create Offer"]]])
+                       [:span (glyph :plus) " Create Request"]]])
 
                [:li.dropdown {:class (if (om/get-state owner :menu-open) "clearfix open")}
                 [:a.dropdown-toggle {:href "#"

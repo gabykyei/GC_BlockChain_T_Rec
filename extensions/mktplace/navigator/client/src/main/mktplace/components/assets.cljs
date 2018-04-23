@@ -33,9 +33,9 @@
                        (sort-by :name)
                        (map #(let [{:keys [id name]} %]
                                [:option {:key id :value id} name])))]
-      (conj [[:option {:key "unselected"} "Select an Asset Type"]]
+      (conj [[:option {:key "unselected"} "Select a Skill Set"]]
             (if (empty? options)
-              [:option {:key "none"} "No Asset Types Available"]
+              [:option {:key "none"} "No Skill Sets Available"]
               options)))))
 
 (defn- is-valid-asset-type? [new-asset-type]
@@ -102,20 +102,20 @@
 
               (when (:new-asset-type state)
                 [:div.panel.panel-default
-                 [:div.panel-heading "Create Asset Type"]
+                 [:div.panel-heading "Create a Skill Set"]
                  [:div.panel-body
                   (text-field owner [:new-asset-type :name] "Name"
                               {:help-text "An optional, human-readable name for
-                                          the asset type. Must begin with '/'."
+                                          the skill set. Must begin with '/'."
                                :pattern fmt/object-name-pattern})
 
                   (text-field owner [:new-asset-type :description] "Description"
-                              {:help-text "Optional information about the asset type."})
+                              {:help-text "Optional information about the skill set."})
 
                   (check-box-field owner [:new-asset-type :restricted ]
                                    (header-note
                                      "Restricted"
-                                     "only the original creator can create assets of this type"))
+                                     "only the original creator can create skill sets of this type"))
 
                   [:div.form-button-group
                    [:button.btn.btn-default.pull-right
@@ -128,7 +128,7 @@
               (check-box-field owner :restricted
                                (header-note
                                  "Restricted"
-                                 "only the original creator can create holdings of this asset"))
+                                 "only the original creator can create Records of this skill set"))
               (check-box-field owner :consumable
                                (header-note
                                  "Consumable"
