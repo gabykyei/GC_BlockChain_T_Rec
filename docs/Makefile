@@ -53,6 +53,7 @@ help:
 	@echo "  coverage   to run coverage check of the documentation (if enabled)"
 
 clean:
+<<<<<<< HEAD
 	rm -rf $(BUILDDIR)/* source/cli/output/*.out
 
 templates:
@@ -89,6 +90,21 @@ rust:
 	cp -r $(SAWTOOTH)/sdk/rust/target/doc/ $(RUSTSDKDIR)/doc
 
 html: templates cli python go javascript rust
+=======
+	rm -rf $(BUILDDIR)/* source/sawtooth_api source/mktplace_api
+	rm -rf $(BUILDDIR)/* source/bond_family_guide/users_guide/cli_output/*usage.out
+
+genoutput:
+	./generate_cli_output
+
+sawtooth_apidoc:
+	$(SPHINXAPIDOC) -o source/sawtooth_api -M -f -e -H "Distributed Ledger Python API" $(SAWTOOTH_DIR) $(SAWTOOTH_DIR)/setup.py
+
+mktplace_apidoc:
+	$(SPHINXAPIDOC) -o source/mktplace_api -M -f -e -H "MarketPlace Python API" $(MKTPLACE_DIR) $(MKTPLACE_DIR)/setup.py
+
+html: sawtooth_apidoc mktplace_apidoc genoutput
+>>>>>>> 0-7
 	@mkdir -p source/_static
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(HTMLDIR)
 	@echo

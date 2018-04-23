@@ -1,0 +1,37 @@
+Transactions:
+- Updates:
+  - UpdateType: CreateOrganization
+    ObjectId: bnk1000000000000000046697273742042616e6b206f6620476f6e646f72
+    Name: First Bank of Gondor
+    PricingSource: BGDR
+    Authorization:
+      - {ParticipantId: 3932250c4877136ee99bf76e5ffbb50b7fbd46d6788340d294225f67b3a2e98c,
+         Role: marketmaker}
+  - UpdateType: CreateOrganization
+    ObjectId: bnk20000000000000000005365636f6e642042616e6b206f66204e61726e6961
+    Name: Second Bank of Narnia
+    PricingSource: BNRN
+    Authorization:
+      - {ParticipantId: 3932250c4877136ee99bf76e5ffbb50b7fbd46d6788340d294225f67b3a2e98c,
+         Role: marketmaker}
+  - UpdateType: CreateOrganization
+    ObjectId: bnk30000000000000054686972642042616e6b206f66204c6f6f70616c616e64
+    Name: Third Bank of Loopaland
+    PricingSource: 3BLL
+    Authorization:
+      - {ParticipantId: 3932250c4877136ee99bf76e5ffbb50b7fbd46d6788340d294225f67b3a2e98c,
+         Role: marketmaker}
+  - UpdateType: CreateOrganization
+    ObjectId: bnk4000000000000466f757274682042616e6b206f66204e657665726c616e64
+    Name: Fourth Bank of Neverland
+    PricingSource: BKNV
+    Authorization:
+      - {ParticipantId: 3932250c4877136ee99bf76e5ffbb50b7fbd46d6788340d294225f67b3a2e98c,
+         Role: marketmaker}
+  - UpdateType: CreateOrganization
+    ObjectId: bnk5000000000000000046696674682042616e6b206f66204c696c6c69707574
+    Name: Fifth Bank of Lilliput
+    PricingSource: LLPT
+    Authorization:
+      - {ParticipantId: 3932250c4877136ee99bf76e5ffbb50b7fbd46d6788340d294225f67b3a2e98c,
+         Role: marketmaker}

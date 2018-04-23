@@ -1,0 +1,85 @@
+Transactions:
+- Updates:
+  - UpdateType: CreateBond
+    AmountOutstanding: '2250000000'
+    CorporateDebtRatings:
+      Fitch: BBB
+      Moodys: Ba3
+      S&P: BBB-
+    CouponRate: '4.375'
+    CouponType: Fixed
+    CouponFrequency: Daily
+    Cusip: 91911TAM5
+    FaceValue: 1000
+    Isin: US91911TAM53
+    FirstSettlementDate: '01/11/2012'
+    FirstCouponDate: '01/12/2012'
+    MaturityDate: '01/11/2022'
+    Issuer: RES
+    ObjectId: bnd10000000000000000000000000000000000005553393139313154414d3533
+  - UpdateType: CreateBond
+    AmountOutstanding: '11000000000'
+    CorporateDebtRatings:
+      Moodys: A3
+      S&P: A-
+    CouponRate: '3.65'
+    CouponType: Fixed
+    CouponFrequency: Monthly
+    Cusip: 035242AP1
+    FaceValue: 1000
+    Isin: US035242AP13
+    FirstSettlementDate: '01/25/2016'
+    FirstCouponDate: '02/01/2016'
+    MaturityDate: '02/01/2026'
+    Issuer: TWRD
+    ObjectId: bnd2000000000000000000000000000000000000555330333532343241503133
+  - UpdateType: CreateBond
+    AmountOutstanding: '1200000000'
+    CorporateDebtRatings:
+      Moodys: A1
+      S&P: A+
+    CouponRate: '1.7'
+    CouponType: Fixed
+    CouponFrequency: Quarterly
+    Cusip: 22160KAF2
+    FaceValue: 1000
+    Isin: US22160KAF21
+    FirstSettlementDate: '12/07/2012'
+    FirstCouponDate: '01/01/2013'
+    MaturityDate: '12/15/2019'
+    Issuer: SCS
+    ObjectId: bnd3000000000000000000000000000000000000555332323136304b41463231
+  - UpdateType: CreateBond
+    AmountOutstanding: '1500000000'
+    CorporateDebtRatings:
+      Fitch: BB
+      Moodys: B3
+      S&P: B+
+    CouponBenchmark: ThreeMonth
+    CouponRate: '2.14'
+    CouponType: Floating
+    CouponFrequency: Daily
+    Cusip: 71647NAE9
+    FaceValue: 1000
+    Isin: US71647NAE94
+    FirstSettlementDate: '05/20/2013'
+    FirstCouponDate: '06/01/2013'
+    MaturityDate: '01/15/2019'
+    Issuer: CHE
+    ObjectId: bnd4000000000000000000000000000000000000555337313634374e41453934
+  - UpdateType: CreateBond
+    AmountOutstanding: '1200000000'
+    CorporateDebtRatings:
+      Moodys: A1
+      S&P: A+
+    CouponRate: '1.7'
+    CouponType: Fixed
+    CouponFrequency: Daily
+    Cusip: 12345KAF2
+    FaceValue: 1000
+    Isin: US12345KAF21
+    FirstSettlementDate: '12/07/2012'
+    FirstCouponDate: '01/01/2013'
+    MaturityDate: '07/20/2016'
+    Issuer: TTT
+    ObjectId: bnd5000000000000000000000000000000000000555331323334354b41463231

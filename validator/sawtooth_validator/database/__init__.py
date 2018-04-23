@@ -15,5 +15,10 @@
 
 __all__ = [
     'database',
+<<<<<<< HEAD:validator/sawtooth_validator/database/__init__.py
     'indexed_database',
+=======
+    'shelf_database',
+    'lmdb_database',
+>>>>>>> 0-7:validator/sawtooth_validator/database/__init__.py
     'lmdb_nolock_database']

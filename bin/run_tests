@@ -1,6 +1,10 @@
 #!/bin/bash
 #
+<<<<<<< HEAD
 # Copyright 2017 Intel Corporation
+=======
+# Copyright 2016 Intel Corporation
+>>>>>>> 0-7
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +18,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ------------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+
+usage() {
+    echo "Usage:"
+    echo "  $0 [-m Module]"
+    echo
+    echo "Options:"
+    echo "  -h          print usage and exit"
+    echo "  -m Module   only run tests of specified module <core, signing, validator, mktplace, bond, arcade>"
+}
+>>>>>>> 0-7
 
 # MODULE_LIST determines the order in which modules are run.
 # Quicker tests should run before slower ones.
@@ -363,4 +379,123 @@ copy_coverage() {
     mv -f .coverage $PROJECT_DIR/coverage/$1
 }
 
+<<<<<<< HEAD
 main
+=======
+top_dir=$(cd $(dirname $(dirname $0)) && pwd)
+
+PATH=$top_dir/bin:$PATH
+export PATH
+
+test_core() {
+	PYTHONPATH=$top_dir/core
+	export PYTHONPATH
+	cd core
+	nose2 -v
+	cd ..
+}
+
+test_signing() {
+	PYTHONPATH=$top_dir
+	PYTHONPATH=$PYTHONPATH:$top_dir/signing
+	PYTHONPATH=$PYTHONPATH:$top_dir/signing/build/lib.linux-x86_64-2.7
+	export PYTHONPATH
+	cd signing
+	nose2 -v
+	cd ..
+}
+
+test_validator() {
+	PYTHONPATH=$top_dir
+	PYTHONPATH=$PYTHONPATH:$top_dir/signing
+	PYTHONPATH=$PYTHONPATH:$top_dir/signing/build/lib.linux-x86_64-2.7
+	PYTHONPATH=$PYTHONPATH:$top_dir/core
+	PYTHONPATH=$PYTHONPATH:$top_dir/validator
+	PYTHONPATH=$PYTHONPATH:$top_dir/validator/build/lib.linux-x86_64-2.7
+	export PYTHONPATH
+	cd validator
+	nose2 -v unit
+
+	export RUN_TEST_SUITES=1
+       nose2 -v sawtooth_suites.ts_pr_dev_mode.DevModeTestSuite
+       nose2 -v sawtooth_suites.ts_pr_poet1.Poet1TestSuite
+	unset RUN_TEST_SUITES
+	cd ..
+}
+
+test_mktplace() {
+	PYTHONPATH=$top_dir
+	PYTHONPATH=$PYTHONPATH:$top_dir/signing
+	PYTHONPATH=$PYTHONPATH:$top_dir/signing/build/lib.linux-x86_64-2.7
+	PYTHONPATH=$PYTHONPATH:$top_dir/core
+	PYTHONPATH=$PYTHONPATH:$top_dir/validator
+	PYTHONPATH=$PYTHONPATH:$top_dir/validator/build/lib.linux-x86_64-2.7
+	PYTHONPATH=$PYTHONPATH:$top_dir/extensions/mktplace
+	export PYTHONPATH
+	cd extensions/mktplace
+	nose2 -v unit
+	export RUN_TEST_SUITES=1
+       nose2 -v sawtooth_suites.ts_pr_mkt_dev_mode.DevModeMktTestSuite
+	unset RUN_TEST_SUITES
+	cd ../..
+}
+
+test_bond() {
+	PYTHONPATH=$top_dir
+	PYTHONPATH=$PYTHONPATH:$top_dir/signing
+	PYTHONPATH=$PYTHONPATH:$top_dir/signing/build/lib.linux-x86_64-2.7
+	PYTHONPATH=$PYTHONPATH:$top_dir/core
+	PYTHONPATH=$PYTHONPATH:$top_dir/validator
+	PYTHONPATH=$PYTHONPATH:$top_dir/validator/build/lib.linux-x86_64-2.7
+	PYTHONPATH=$PYTHONPATH:$top_dir/extensions/bond
+	export PYTHONPATH
+	cd extensions/bond
+	nose2 -v
+	cd ../..
+}
+
+
+MODULE="all"
+while getopts :m:h opt
+do
+    case $opt in
+        h)
+            usage
+            exit 0
+            ;;
+        m)
+            MODULE=$OPTARG
+            ;;
+        \?)
+            echo "Invalid option: -$OPTARG" >&2
+            exit 2
+            ;;
+    esac
+done
+
+case $MODULE in
+    all)
+        test_core
+        test_signing
+        test_validator
+        test_mktplace
+        test_bond
+        ;;
+    core)
+        test_core
+        ;;
+    signing)
+        test_signing
+        ;;
+    validator)
+        test_validator
+        ;;
+    mktplace)
+        test_mktplace
+        ;;
+    bond)
+        test_bond
+        ;;
+
+esac
+>>>>>>> 0-7

@@ -46,6 +46,7 @@ class LMDBNoLockDatabase(database.Database):
                 os.remove(filename)
             create = True
 
+<<<<<<< HEAD
         self._lmdb = lmdb.Environment(
             path=filename,
             map_size=1024**4,
@@ -57,10 +58,21 @@ class LMDBNoLockDatabase(database.Database):
             lock=True)
 
     # pylint: disable=no-value-for-parameter
+=======
+        self._lmdb = lmdb.Environment(path=filename,
+                                      map_size=1024**4,
+                                      map_async=True,
+                                      writemap=True,
+                                      subdir=False,
+                                      create=create,
+                                      lock=True)
+
+>>>>>>> 0-7
     def __len__(self):
         with self._lmdb.begin() as txn:
             return txn.stat()['entries']
 
+<<<<<<< HEAD
     def contains_key(self, key, index=None):
         with self._lmdb.begin() as txn:
             return txn.get(key.encode()) is not None
@@ -75,6 +87,24 @@ class LMDBNoLockDatabase(database.Database):
             return None
 
     def get_multi(self, keys, index=None):
+=======
+    def __contains__(self, key):
+        with self._lmdb.begin() as txn:
+            return bool(txn.get(key.encode()) is not None)
+
+    def get(self, key):
+        """Retrieves a value associated with a key from the database
+
+        Args:
+            key (str): The key to retrieve
+        """
+        with self._lmdb.begin() as txn:
+            packed = txn.get(key.encode())
+            if packed is not None:
+                return cbor.loads(packed)
+
+    def get_batch(self, keys):
+>>>>>>> 0-7
         with self._lmdb.begin() as txn:
             result = []
             for key in keys:
@@ -83,6 +113,7 @@ class LMDBNoLockDatabase(database.Database):
                     result.append((key, cbor.loads(packed)))
         return result
 
+<<<<<<< HEAD
     def cursor(self, index=None):
         """
         This currently is just to satisfy the interface.
@@ -100,6 +131,23 @@ class LMDBNoLockDatabase(database.Database):
             for k in deletes:
                 txn.delete(k.encode())
             for k, v in puts:
+=======
+    def set(self, key, value):
+        """Sets a value associated with a key in the database
+
+        Args:
+            key (str): The key to set.
+            value (str): The value to associate with the key.
+        """
+        packed = cbor.dumps(value)
+        with self._lmdb.begin(write=True, buffers=True) as txn:
+            txn.put(key.encode(), packed, overwrite=True)
+        self.sync()
+
+    def set_batch(self, kvpairs):
+        with self._lmdb.begin(write=True, buffers=True) as txn:
+            for k, v in kvpairs:
+>>>>>>> 0-7
                 packed = cbor.dumps(v)
                 txn.put(k.encode(), packed, overwrite=True)
         self.sync()
@@ -123,7 +171,11 @@ class LMDBNoLockDatabase(database.Database):
         """
         self._lmdb.close()
 
+<<<<<<< HEAD
     def keys(self, index=None):
+=======
+    def keys(self):
+>>>>>>> 0-7
         """Returns a list of keys in the database
         """
         with self._lmdb.begin() as txn:

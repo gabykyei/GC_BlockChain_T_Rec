@@ -15,10 +15,18 @@
 import time
 
 
+<<<<<<< HEAD:validator/tests/test_journal/utils.py
 class TimeOut(object):
     def __init__(self, wait):
         self.wait_time = wait
         self.expire_time = time.time() + wait
+=======
+from sawtooth.manage.node import NodeCommandGenerator
+from sawtooth.manage.node import GenesisCommand
+from sawtooth.manage.node import StartCommand
+from sawtooth.manage.node import StopCommand
+from sawtooth.manage.node import KillCommand
+>>>>>>> 0-7:core/sawtooth/manage/simple.py
 
     def is_timed_out(self):
         return time.time() > self.expire_time
@@ -27,6 +35,7 @@ class TimeOut(object):
         return time.time() > self.expire_time
 
 
+<<<<<<< HEAD:validator/tests/test_journal/utils.py
 def wait_until(lbd, time_out=None):
     end_time = None
     if time_out is not None:
@@ -36,3 +45,16 @@ def wait_until(lbd, time_out=None):
            or time.time() < end_time) and \
             not lbd():
         time.sleep(0.1)
+=======
+    def genesis(self, node_args):
+        self._commands.append(GenesisCommand(node_args))
+
+    def start(self, node_args):
+        self._commands.append(StartCommand(node_args))
+
+    def stop(self, node_name):
+        self._commands.append(StopCommand(node_name))
+
+    def kill(self, node_name):
+        self._commands.append(KillCommand(node_name))
+>>>>>>> 0-7:core/sawtooth/manage/simple.py

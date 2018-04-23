@@ -101,7 +101,11 @@ class SignupInfo(object):
             SignupInfo: A signup info object.
         """
         enclave_signup_info = \
+<<<<<<< HEAD:consensus/poet/core/sawtooth_poet/poet_consensus/signup_info.py
             poet_enclave_module.deserialize_signup_info(serialized)
+=======
+            cls.poet_enclave.deserialize_signup_info(serialized)
+>>>>>>> 0-7:validator/sawtooth_validator/consensus/poet1/signup_info.py
 
         return cls(enclave_signup_info)
 
@@ -124,6 +128,7 @@ class SignupInfo(object):
             The encoded PoET public key corresponding to private key used by
             PoET to sign wait certificates.
         """
+<<<<<<< HEAD:consensus/poet/core/sawtooth_poet/poet_consensus/signup_info.py
         return poet_enclave_module.unseal_signup_data(sealed_signup_data)
 
     @classmethod
@@ -146,6 +151,12 @@ class SignupInfo(object):
             PoET to sign wait certificates.
         """
         return poet_enclave_module.release_signup_data(sealed_signup_data)
+=======
+        return \
+            cls.poet_enclave.unseal_signup_data(
+                validator_address,
+                sealed_signup_data)
+>>>>>>> 0-7:validator/sawtooth_validator/consensus/poet1/signup_info.py
 
     def __init__(self, enclave_signup_info):
         self.poet_public_key = enclave_signup_info.poet_public_key
@@ -164,6 +175,30 @@ class SignupInfo(object):
                 self.proof_data,
                 self.anti_sybil_id)
 
+<<<<<<< HEAD:consensus/poet/core/sawtooth_poet/poet_consensus/signup_info.py
+=======
+    def check_valid(self,
+                    originator_public_key_hash,
+                    most_recent_wait_certificate_id):
+        """
+        Checks the validity of the signup information.
+
+        Args:
+            originator_public_key_hash (str): A string representing SHA256
+                hash (i.e., hashlib.sha256(OPK).hexdigest()) of the
+                originator's public key
+            most_recent_wait_certificate_id (str): The ID of the
+                most-recently-created wait certificate.
+
+        Returns:
+            SignupInfo object
+        """
+        self.poet_enclave.verify_signup_info(
+            self.enclave_signup_info,
+            originator_public_key_hash,
+            most_recent_wait_certificate_id)
+
+>>>>>>> 0-7:validator/sawtooth_validator/consensus/poet1/signup_info.py
     def serialize(self):
         # Simply return the serialized version of the enclave signup info
         # as we don't have anything to add.

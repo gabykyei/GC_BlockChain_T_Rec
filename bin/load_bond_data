@@ -1,0 +1,22 @@
+#!/bin/bash
+
+top_dir=$(cd $(dirname $(dirname $0)) && pwd)
+PYTHONPATH=$top_dir/core:$top_dir/extensions/bond
+PYTHONPATH=$PYTHONPATH:$top_dir/core/build/lib.linux-x86_64-2.7
+PYTHONPATH=$PYTHONPATH:$top_dir/signing
+PYTHONPATH=$PYTHONPATH:$top_dir/signing/build/lib.linux-x86_64-2.7
+PYTHONPATH=$PYTHONPATH:$top_dir/validator
+export PYTHONPATH
+
+./bin/btp init
+./bin/btp load -vvvv --wait \
+    extensions/bond/data/libor.yaml \
+    extensions/bond/data/participant.yaml \
+    extensions/bond/data/organizations.yaml \
+    extensions/bond/data/bank_organizations.yaml \
+    extensions/bond/data/corp_bond_issue.yaml \
+    extensions/bond/data/govt_bond_issue.yaml \
+    extensions/bond/data/quotes_and_orders.yaml \
+    extensions/bond/data/holdings.yaml \
+    extensions/bond/data/bank_holdings.yaml \
+    extensions/bond/data/settlements.yaml

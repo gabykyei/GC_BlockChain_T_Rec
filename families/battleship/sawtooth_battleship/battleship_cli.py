@@ -226,10 +226,14 @@ def do_init(args, config):
     url = args.url if args.url else config.get('DEFAULT', 'url')
 
     config.set('DEFAULT', 'username', username)
+<<<<<<< HEAD:families/battleship/sawtooth_battleship/battleship_cli.py
     config.set('DEFAULT', 'url', url)
 
     print("set username: %s" % username)
     print("set url: %s" % url)
+=======
+    print("set username: {}".format(username))
+>>>>>>> 0-7:extensions/arcade/sawtooth_battleship/battleship_cli.py
 
     save_config(config)
 
@@ -241,6 +245,7 @@ def do_init(args, config):
 
     if not os.path.exists(priv_filename):
         try:
+<<<<<<< HEAD:families/battleship/sawtooth_battleship/battleship_cli.py
             if not os.path.exists(os.path.dirname(priv_filename)):
                 os.makedirs(os.path.dirname(priv_filename))
 
@@ -258,6 +263,26 @@ def do_init(args, config):
                 public_key_fd.write(public_key.as_hex())
                 public_key_fd.write("\n")
         except IOError as ioe:
+=======
+            if not os.path.exists(os.path.dirname(wif_filename)):
+                os.makedirs(os.path.dirname(wif_filename))
+
+            privkey = signing.generate_privkey()
+            encoded = signing.encode_privkey(privkey, 'wif')
+            pubkey = signing.generate_pubkey(privkey)
+            addr = signing.generate_identifier(pubkey)
+
+            with open(wif_filename, "w") as wif_fd:
+                print("writing file: {}".format(wif_filename))
+                wif_fd.write(encoded)
+                wif_fd.write("\n")
+
+            with open(addr_filename, "w") as addr_fd:
+                print("writing file: {}".format(addr_filename))
+                addr_fd.write(addr)
+                addr_fd.write("\n")
+        except IOError, ioe:
+>>>>>>> 0-7:extensions/arcade/sawtooth_battleship/battleship_cli.py
             raise BattleshipException("IOError: {}".format(str(ioe)))
 
 
@@ -363,10 +388,14 @@ def do_list(args, config):
 
     fmt = "%-15s %-15.15s %-15.15s %s"
     print(fmt % ('GAME', 'PLAYER 1', 'PLAYER 2', 'STATE'))
+<<<<<<< HEAD:families/battleship/sawtooth_battleship/battleship_cli.py
 
     keys = list(state.keys())
     keys.sort()
     for name in keys:
+=======
+    for name in state:
+>>>>>>> 0-7:extensions/arcade/sawtooth_battleship/battleship_cli.py
         if 'Player1' in state[name]:
             player1 = state[name]['Player1']
         else:
@@ -475,11 +504,19 @@ def print_board(board, size, is_target_board=True,
                 pending_on_target_board=False, last_fire=None):
     print(''.join(["-"] * (size * 3 + 3)))
     print("  ", end=' ')
+<<<<<<< HEAD:families/battleship/sawtooth_battleship/battleship_cli.py
     for i in range(0, size):
         print(" {}".format(chr(ord('A') + i)), end=' ')
     print()
 
     for row_idx, row in enumerate(range(0, size)):
+=======
+    for i in xrange(0, size):
+        print(" {}".format(chr(ord('A') + i)), end=' ')
+    print()
+
+    for row_idx, row in enumerate(xrange(0, size)):
+>>>>>>> 0-7:extensions/arcade/sawtooth_battleship/battleship_cli.py
         print("%2d" % (row + 1), end=' ')
         for col_idx, space in enumerate(board[row]):
             if is_target_board:
@@ -528,11 +565,19 @@ def do_genstats(args, config):
 
     # Print the board of percentages.
     print("  ", end=' ')
+<<<<<<< HEAD:families/battleship/sawtooth_battleship/battleship_cli.py
     for i in range(0, size):
         print("  {}".format(chr(ord('A') + i)), end=' ')
     print()
 
     for row in range(0, size):
+=======
+    for i in xrange(0, size):
+        print("  {}".format(chr(ord('A') + i)), end=' ')
+    print()
+
+    for row in xrange(0, size):
+>>>>>>> 0-7:extensions/arcade/sawtooth_battleship/battleship_cli.py
         print("%2d" % (row + 1), end=' ')
         for space in count_board[row]:
             print("%3.0f" % (float(space) / float(count) * 100,), end=' ')
@@ -630,6 +675,15 @@ def main_wrapper():
         main()
     except BattleshipException as e:
         print("Error: {}".format(e), file=sys.stderr)
+<<<<<<< HEAD:families/battleship/sawtooth_battleship/battleship_cli.py
+=======
+        sys.exit(1)
+    except InvalidTransactionError as e:
+        print("Error: {}".format(e), file=sys.stderr)
+        sys.exit(1)
+    except ClientException as e:
+        print("Error: {}".format(e), file=sys.stderr)
+>>>>>>> 0-7:extensions/arcade/sawtooth_battleship/battleship_cli.py
         sys.exit(1)
     except KeyboardInterrupt:
         pass

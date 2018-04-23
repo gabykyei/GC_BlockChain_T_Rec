@@ -69,18 +69,29 @@ class WaitCertificate(object):
                 from create_signup_info. Used to authenticate with enclave.
             wait_timer (WaitTimer): The wait timer for which the wait
                 certificate is being requested.
+<<<<<<< HEAD:consensus/poet/core/sawtooth_poet/poet_consensus/wait_certificate.py
             block_hash (str): The hash of the block for which this
+=======
+            block_hash (str): The hash  of the block for which this
+>>>>>>> 0-7:validator/sawtooth_validator/consensus/poet1/wait_certificate.py
                 certificate is being created.
 
         Returns:
             WaitCertificate: A new wait certificate.
         """
+<<<<<<< HEAD:consensus/poet/core/sawtooth_poet/poet_consensus/wait_certificate.py
 
         enclave_certificate = None
         try:
             enclave_certificate = \
                 poet_enclave_module.create_wait_certificate(
                     sealed_signup_data,
+=======
+        enclave_certificate = None
+        try:
+            enclave_certificate = \
+                cls.poet_enclave.create_wait_certificate(
+>>>>>>> 0-7:validator/sawtooth_validator/consensus/poet1/wait_certificate.py
                     wait_timer.enclave_wait_timer,
                     block_hash)
         except AttributeError as ex:
@@ -113,7 +124,11 @@ class WaitCertificate(object):
                 the serialized wait certificate.
         """
         enclave_certificate = \
+<<<<<<< HEAD:consensus/poet/core/sawtooth_poet/poet_consensus/wait_certificate.py
             poet_enclave_module.deserialize_wait_certificate(
+=======
+            cls.poet_enclave.deserialize_wait_certificate(
+>>>>>>> 0-7:validator/sawtooth_validator/consensus/poet1/wait_certificate.py
                 serialized,
                 signature)
 
@@ -220,9 +235,16 @@ class WaitCertificate(object):
                         previous_certificate_id))
 
         try:
+<<<<<<< HEAD:consensus/poet/core/sawtooth_poet/poet_consensus/wait_certificate.py
             poet_enclave_module.verify_wait_certificate(
                 enclave_certificate,
                 poet_public_key)
+=======
+            return \
+                self.poet_enclave.verify_wait_certificate(
+                    enclave_certificate,
+                    poet_public_key)
+>>>>>>> 0-7:validator/sawtooth_validator/consensus/poet1/wait_certificate.py
         except Timeout:
             raise NotAvailableException
         except requests.ConnectionError:

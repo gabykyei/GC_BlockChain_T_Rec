@@ -20,13 +20,18 @@ set -e
 find_packages() {
     topdir=$1
     since=$2
+    exclude_dir=$3
 
     (
     if [ "$since" != "" ]; then
         git ls-files -mo "$topdir/*.py" -x build
         git diff --name-only $since "$topdir/*.py"
     else
-        find $topdir -name \*.py
+        if [ "$exclude_dir" != "" ]; then
+            find $topdir -name \*.py -not -path "*/$exclude_dir/*"
+        else
+            find $topdir -name \*.py
+        fi
     fi
     ) \
         | sort \
@@ -35,6 +40,7 @@ find_packages() {
         | grep ^:: \
         | sed -e 's/^::\s//' \
         | grep -v /setup.py$ \
+<<<<<<< HEAD
         | grep -v _pb2\.py$ \
         | grep -v poet_enclave\.py$
 }
@@ -47,10 +53,29 @@ lint() {
 
     pylintrc=.pylintrc
     pylint_bin="python3 -m pylint"
+=======
+        | grep -v /integration/ \
+        | grep -v /unit/ \
+        | grep -v /sawtooth_suites/ \
+        | grep -v /navigator/ \
+        | grep -v /bond/tests/ \
+        | grep -v /bond/ui/
+}
+
+lint() {
+    topdir=$(pwd)
+    pylint_bin=$1
+    subdir=$2
+    since=$3
+    pylintrc=$4
+    run_pep8=$5
+    exclude_dir=$6
+
+>>>>>>> 0-7
 
     error=0
 
-    packages=$(find_packages "$subdir" "$since")
+    packages=$(find_packages "$subdir" "$since" "$exclude_dir")
 
     if [ "$packages" != "" ]; then
         [ $VERBOSE = 0 ] && echo "$subdir"
@@ -59,6 +84,7 @@ lint() {
 
         [ $VERBOSE = 1 ] && (
             echo "------------------------------------------------------------------------------"
+<<<<<<< HEAD
             echo "-- Running pycodestyle in $subdir..."
         )
 
@@ -77,6 +103,16 @@ lint() {
             --score=no \
             --persistent=no \
             $packages || error=1
+=======
+            echo "-- Running $pylint_bin $pylintrc in $subdir..."
+        )
+        if [ -x "$(command -v $pylint_bin)" ]; then
+            $pylint_bin \
+                --rcfile=$pylintrc \
+                --reports=no \
+                $packages || error=1
+        fi
+>>>>>>> 0-7
 
 
         [ $VERBOSE = 1 ] && (
@@ -141,9 +177,14 @@ echo "pycodestyle $(pycodestyle --version)"
 echo "$(pylint --version)"
 
 if [ "$DRY_RUN" = "1" ]; then
+<<<<<<< HEAD
     for dir in signing validator sdk/python sdk/examples/intkey_python \
         consensus/poet/cli consensus/poet/common consensus/poet/core \
         consensus/poet/families consensus/poet/sgx consensus/poet/simulator
+=======
+    for dir in core signing validator extensions/bond extensions/mktplace \
+        extensions/arcade
+>>>>>>> 0-7
     do
         for package in $(find_packages "$dir" "$SINCE")
         do
@@ -187,6 +228,7 @@ lint cli "$SINCE" || retval=1
 # signing
 PYTHONPATH=$top_dir/signing
 export PYTHONPATH
+<<<<<<< HEAD
 lint signing "$SINCE" || retval=1
 
 # sdk, rest api, xo, intkey
@@ -210,6 +252,9 @@ PYTHONPATH=$PYTHONPATH:$top_dir/sdk/python
 export PYTHONPATH
 lint families/settings "$SINCE" || retval=1
 lint families/identity "$SINCE" || retval=1
+=======
+lint pylint signing "$SINCE" .pylintrc-strict 1 || retval=1
+>>>>>>> 0-7
 
 # battleship
 PYTHONPATH=$top_dir/families/battleship
@@ -217,7 +262,12 @@ PYTHONPATH=$PYTHONPATH:$top_dir/signing
 PYTHONPATH=$PYTHONPATH:$top_dir/sdk/python
 PYTHONPATH=$PYTHONPATH:$top_dir/validator
 export PYTHONPATH
+<<<<<<< HEAD
 lint families/battleship "$SINCE" || retval=1
+=======
+lint pylint core "$SINCE" .pylintrc-core 1 || retval=1
+lint pylint core/sawtooth "$SINCE" .pylintrc-strict 0 || retval=1
+>>>>>>> 0-7
 
 # block info
 PYTHONPATH=$top_dir/families/block_info
@@ -240,7 +290,13 @@ PYTHONPATH=$PYTHONPATH:$top_dir/consensus/poet/core
 PYTHONPATH=$PYTHONPATH:$top_dir/consensus/poet/core/tests
 PYTHONPATH=$PYTHONPATH:$top_dir/consensus/poet/simulator
 export PYTHONPATH
+<<<<<<< HEAD
 lint consensus/poet/core "$SINCE" || retval=1
+=======
+lint pylint validator "$SINCE" .pylintrc-validator 1 sawtooth_validator || retval=1
+lint pylint validator/sawtooth_validator/consensus "$SINCE" .pylintrc-validator 1 || retval=1
+
+>>>>>>> 0-7
 
 PYTHONPATH=$top_dir/sdk/python
 PYTHONPATH=$PYTHONPATH:$top_dir/signing
@@ -264,7 +320,21 @@ PYTHONPATH=$PYTHONPATH:$top_dir/consensus/poet/common
 PYTHONPATH=$PYTHONPATH:$top_dir/consensus/poet/simulator
 PYTHONPATH=$PYTHONPATH:$top_dir/consensus/poet/simulator/tests
 export PYTHONPATH
+<<<<<<< HEAD
 lint consensus/poet/simulator "$SINCE" || retval=1
+=======
+lint pylint extensions/mktplace "$SINCE" .pylintrc-mktplace 1 || retval=1
+
+PYTHONPATH=$top_dir/core
+PYTHONPATH=$PYTHONPATH:$top_dir/core/build/lib.linux-x86_64-2.7
+PYTHONPATH=$PYTHONPATH:$top_dir/signing
+PYTHONPATH=$PYTHONPATH:$top_dir/signing/build/lib.linux-x86_64-2.7
+PYTHONPATH=$PYTHONPATH:$top_dir/validator
+PYTHONPATH=$PYTHONPATH:$top_dir/validator/build/lib.linux-x86_64-2.7
+PYTHONPATH=$PYTHONPATH:$top_dir/extensions/bond
+export PYTHONPATH
+lint pylint extensions/bond "$SINCE" .pylintrc-strict 1 || retval=1
+>>>>>>> 0-7
 
 PYTHONPATH=$top_dir/consensus/poet/cli
 PYTHONPATH=$PYTHONPATH:$top_dir/signing
@@ -289,6 +359,10 @@ PYTHONPATH=$PYTHONPATH:$top_dir/signing
 PYTHONPATH=$PYTHONPATH:$top_dir/utility/ias_client
 PYTHONPATH=$PYTHONPATH:$top_dir/utility/ias_client/tests
 export PYTHONPATH
+<<<<<<< HEAD
 lint utility/ias_client "$SINCE" || retval=1
+=======
+lint pylint extensions/arcade "$SINCE" .pylintrc-arcade 1 || retval=1
+>>>>>>> 0-7
 
 exit $retval

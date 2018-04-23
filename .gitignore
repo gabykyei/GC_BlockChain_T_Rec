@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Copyright 2017 Intel Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -139,3 +140,7 @@
 /perf/intkey_workload/bin
 
 *.batch
+=======
+*.pyc
+tools/ubuntu-xenial-16.04-cloudimg-console.log
+>>>>>>> 0-7

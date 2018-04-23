@@ -1,0 +1,86 @@
+Transactions:
+- Updates:
+  - Date: '2016-07-20'
+    LiborPublicKey: 04d4a352251061897ef3f5312f547bd2e860b1dee1a7932142826dae10f027450af57a21a0fb5812cc9108ece0e41ffe4760f1aca1e424c1a8c4008568178ef28f
+    LiborSignature: HI+1LG8an9XFRFCRZTvojNy2MZdHSJeQTzMnme2YgLzFDAJPKd7KMm6nU8XHZN/MjwHl7ECzW+zFtmQnJHkyw4o=
+    Rates:
+      OneMonth: 0.4874
+      OneWeek: 0.4386
+      OneYear: 1.3449
+      Overnight: 0.4174
+      SixMonth: 1.0202
+      ThreeMonth: 0.7016
+      TwoMonth: 0.577
+    UpdateType: CreateLIBOR
+  - Date: '2016-07-19'
+    LiborPublicKey: 04d4a352251061897ef3f5312f547bd2e860b1dee1a7932142826dae10f027450af57a21a0fb5812cc9108ece0e41ffe4760f1aca1e424c1a8c4008568178ef28f
+    LiborSignature: G6QuBETNliiyX1Gzq+jHt4/T5a6ly9ynN3DRCHyvNa3hkSZX+OfColo0F1eVLG6tvMdKJo4oas7pxD10LmyVhNQ=
+    Rates:
+      OneMonth: 0.4853
+      OneWeek: 0.439
+      OneYear: 1.3289
+      Overnight: 0.4159
+      SixMonth: 1.0073
+      ThreeMonth: 0.6971
+      TwoMonth: 0.5767
+    UpdateType: CreateLIBOR
+  - Date: '2016-07-18'
+    LiborPublicKey: 04d4a352251061897ef3f5312f547bd2e860b1dee1a7932142826dae10f027450af57a21a0fb5812cc9108ece0e41ffe4760f1aca1e424c1a8c4008568178ef28f
+    LiborSignature: HLzV4I1AN7C8orX5gp4htrHknUnefeB7jeT1gnbabUS9O4zZqXPrRkjegsgjfIkdh1K3ZG/V9lMiOb6F5Rk7bmo=
+    Rates:
+      OneMonth: 0.48655
+      OneWeek: 0.4385
+      OneYear: 1.3264
+      Overnight: 0.4159
+      SixMonth: 1.0028
+      ThreeMonth: 0.6956
+      TwoMonth: 0.57495
+    UpdateType: CreateLIBOR
+  - Date: '2016-07-15'
+    LiborPublicKey: 04d4a352251061897ef3f5312f547bd2e860b1dee1a7932142826dae10f027450af57a21a0fb5812cc9108ece0e41ffe4760f1aca1e424c1a8c4008568178ef28f
+    LiborSignature: HEl45fnNeNmeVoIOS5+CS19WDRPYTOWqFf00EXOb6ZcwRP4rR5ZpHQh/WSScQ2/lgVwoAOdWLx7zz0t0HjIEygQ=
+    Rates:
+      OneMonth: 0.4833
+      OneWeek: 0.4378
+      OneYear: 1.30825
+      Overnight: 0.4152
+      SixMonth: 0.9938
+      ThreeMonth: 0.68785
+      TwoMonth: 0.5705
+    UpdateType: CreateLIBOR
+  - Date: '2016-07-14'
+    LiborPublicKey: 04d4a352251061897ef3f5312f547bd2e860b1dee1a7932142826dae10f027450af57a21a0fb5812cc9108ece0e41ffe4760f1aca1e424c1a8c4008568178ef28f
+    LiborSignature: G+JbxHNaZ8NyyFllUGFtZBMqWWbyytWtyTtNxRmvB7Fn0Homr+hUT9zszw9Deam4CV4SiwLPVuiisthrvIZQ5EM=
+    Rates:
+      OneMonth: 0.4821
+      OneWeek: 0.43655
+      OneYear: 1.298
+      Overnight: 0.4122
+      SixMonth: 0.98335
+      ThreeMonth: 0.6791
+      TwoMonth: 0.56425
+    UpdateType: CreateLIBOR
+  - Date: '2016-07-13'
+    LiborPublicKey: 04d4a352251061897ef3f5312f547bd2e860b1dee1a7932142826dae10f027450af57a21a0fb5812cc9108ece0e41ffe4760f1aca1e424c1a8c4008568178ef28f
+    LiborSignature: G1dOHNzwu0YTIxZZUKgCQ1kUVuUdShivj0jUeQZMvgFUUaHPrSxPdadlvXTXEXqeFKxLkl/C1Q9fN1nUH+zJucc=
+    Rates:
+      OneMonth: 0.48135
+      OneWeek: 0.4358
+      OneYear: 1.2934
+      Overnight: 0.4127
+      SixMonth: 0.9801
+      ThreeMonth: 0.6801
+      TwoMonth: 0.56325
+    UpdateType: CreateLIBOR
+  - Date: '2016-07-12'
+    LiborPublicKey: 04d4a352251061897ef3f5312f547bd2e860b1dee1a7932142826dae10f027450af57a21a0fb5812cc9108ece0e41ffe4760f1aca1e424c1a8c4008568178ef28f
+    LiborSignature: HFw7hKVxBJIay43AHpkyREDEVvahCgV6mAzdU+SW4DUkXcKKDr02Vxn7PNoyDM7DMeYTTjppvNLlIVkeTfga8kQ=
+    Rates:
+      OneMonth: 0.47935
+      OneWeek: 0.4368
+      OneYear: 1.2845
+      Overnight: 0.4122
+      SixMonth: 0.966
+      ThreeMonth: 0.67335
+      TwoMonth: 0.56275
+    UpdateType: CreateLIBOR

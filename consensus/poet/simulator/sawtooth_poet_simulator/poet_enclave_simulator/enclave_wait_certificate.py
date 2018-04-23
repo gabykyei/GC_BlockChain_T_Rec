@@ -58,7 +58,11 @@ class EnclaveWaitCertificate(object):
             wait_timer (EnclaveWaitTimer): The wait timer we are creating
                 wait certificate for
             nonce (str): A random nonce created for this certificate
+<<<<<<< HEAD:consensus/poet/simulator/sawtooth_poet_simulator/poet_enclave_simulator/enclave_wait_certificate.py
             block_hash (str): The hash for the block that this wait
+=======
+            block_hash (str): The has for the block that this wait
+>>>>>>> 0-7:validator/sawtooth_validator/consensus/poet1/poet_enclave_simulator/enclave_wait_certificate.py
                 certificate is being created for
 
         Returns:

@@ -13,6 +13,11 @@
 # limitations under the License.
 # ------------------------------------------------------------------------------
 
+<<<<<<< HEAD:families/battleship/sawtooth_battleship/processor/__init__.py
 __all__ = [
     'main'
 ]
+=======
+
+__all__ = []
+>>>>>>> 0-7:core/sawtooth/__init__.py
